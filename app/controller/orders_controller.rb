@@ -38,7 +38,7 @@ post '/orders' do
 end
 
  # UPDATE 1 order (render form)
- get '/movies/:id/edit' do
+ get '/orders/:id/edit' do
     redirect_if_not_logged_in
     redirect_if_not_authorized
 
@@ -58,7 +58,7 @@ end
 end 
 
 #DELETE  order
-delete "/movies/:id" do
+delete "/orders/:id" do
     redirect_if_not_logged_in
     redirect_if_not_authorized
 

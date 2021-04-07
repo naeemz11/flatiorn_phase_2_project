@@ -5,12 +5,14 @@ class ApplicationController < Sinatra::Base
         set :views, 'app/views'
         set :public_folder, 'public'
         enable :sessions
-        # set :session_secret, ENV['SESSION_SECRET']
+        set :session_secret, ENV['SESSION_SECRET']
     end
 
-    get '/' do
+    get '/search' do
         erb :welcome
     end
+
+    
 
     helpers do 
 
