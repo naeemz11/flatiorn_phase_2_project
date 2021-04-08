@@ -6,13 +6,13 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         enable :sessions
         set :session_secret, ENV['SESSION_SECRET']
+        use Rack::Flash, :sweep => true
     end
 
-    get '/search' do
+    get '/' do
         erb :welcome
     end
 
-    
 
     helpers do 
 
@@ -25,13 +25,11 @@ class ApplicationController < Sinatra::Base
         end 
 
         def redirect_if_not_logged_in
-            redirect "/login" if
-            !logged_in?
+            redirect "/login" if !logged_in?
         end 
 
         def redirect_if_logged_in
-            redirect "/order" if 
-            logged_in?
+            redirect "/orders" if logged_in?
         end 
     end 
 

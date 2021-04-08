@@ -1,9 +1,15 @@
 class OrdersController < ApplicationController
 
 
+# get '/orders' do 
+#     redirect_if_logged_in
+#     @orders = current_user.orders
+#     erb :'orders/index'
+# end 
+
 get '/orders' do 
-    redirect_if_logged_in
-    @orders = current_user.orders
+    redirect_if_not_logged_in
+    @orders = Order.all
     erb :'orders/index'
 end 
 
@@ -16,14 +22,14 @@ end
 
 get '/orders/:id' do
     redirect_if_not_logged_in
-    redirect_if_not_authorized
-
+    # redirect_if_not_authorized
+    @order= Order.find_by_id(params[:id])
     erb :'orders/show'
 end
 
 #create new order
 post '/orders' do
-    redirect_if_not_logged_in
+     redirect_if_not_logged_in
 
     # movie = Movie.new(params["movie"])
     # movie.user_id = session["user_id"]

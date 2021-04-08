@@ -1,7 +1,15 @@
+<h1>All Order</h1>
 <ul>
+    <% @orders.each do |m| %>
+        <li>
+            <a href="/orders/<%= m.id %>">
+                <%= m.address %>
+                <%= m.item %>
+                <%= m.item_price%>
+                <%= m.quantity %>
+                <%= m.total %>   
+            </a>
+        </li>
+    <% end %>
+</ul>
 
-    <%order.all.each do |model|%>
-    <li><%=model.id%></li>
-    <%end%>
-
-<ul>
