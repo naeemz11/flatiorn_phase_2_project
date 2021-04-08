@@ -1,5 +1,6 @@
 <h1>All Order</h1>
 <ul>
+   
     <% @orders.each do |m| %>
         <li>
             <a href="/orders/<%= m.id %>">
@@ -11,5 +12,7 @@
             </a>
         </li>
     <% end %>
+   
+    <a href="/orders/new" class="button">Add Items</a>
 </ul>
 

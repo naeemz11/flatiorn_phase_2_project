@@ -1,6 +1,15 @@
-<%=@order.address%>
+<li><%=@order.address%>
+<li><%=@order.item%></li>
+<li><%=@order.item_price%></li>
+<li><%=@order.quantity%></li>
+<li><%=@order.total%></li>
+
 
 <form action="/orders/<%= @order.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Order">
+
+    
 </form>
+
+<a href="/orders/<%= @order.id %>" class="button"><BACK</a>

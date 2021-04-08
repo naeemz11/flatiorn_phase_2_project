@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
 get '/orders' do 
     redirect_if_not_logged_in
-    @orders = Order.all
+    @orders = current_user.orders
     erb :'orders/index'
 end 
 
@@ -76,7 +76,7 @@ end
 private
 
 def redirect_if_not_authorized
-    @order = order.find_by_id(params[:id])
+    @order = Order.find_by_id(params[:id])
     if @order.user_id != session["user_id"]
         redirect "/orders"
     end
