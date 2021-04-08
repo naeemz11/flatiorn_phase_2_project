@@ -22,7 +22,7 @@ end
 
 get '/orders/:id' do
     redirect_if_not_logged_in
-    # redirect_if_not_authorized
+     redirect_if_not_authorized
     @order= Order.find_by_id(params[:id])
     erb :'orders/show'
 end
@@ -76,8 +76,9 @@ end
 private
 
 def redirect_if_not_authorized
+    
     @order = Order.find_by_id(params[:id])
-    if @order.user_id != session["user_id"]
+    if !@order || @order.user_id != session["user_id"]
         redirect "/orders"
     end
 end
