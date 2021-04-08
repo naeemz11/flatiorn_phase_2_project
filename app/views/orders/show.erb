@@ -8,8 +8,9 @@
 <form action="/orders/<%= @order.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Order">
-
-    
+   
 </form>
 
-<a href="/orders/<%= @order.id %>" class="button"><BACK</a>
+<a href='/orders/:id/edit' class="button">Edit Items</a>
+   
+</form>
