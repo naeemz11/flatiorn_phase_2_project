@@ -1,3 +1,8 @@
+<br>
+    <center>
+        <h3>Order number <%=@order.id%></h3>
+    </center>
+<br>
 <li><%=@order.address%>
 <li><%=@order.item%></li>
 <li><%=@order.item_price%></li>
@@ -5,12 +10,11 @@
 <li><%=@order.total%></li>
 
 
+</form>
+    <a href='/orders/<%= @order.id %>/edit' class="button">Edit Items</a> 
+</form>
+
 <form action="/orders/<%= @order.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Order">
    
-</form>
-
-<a href='/orders/<%= @order.id %>/edit' class="button">Edit Items</a>
-   
-</form>

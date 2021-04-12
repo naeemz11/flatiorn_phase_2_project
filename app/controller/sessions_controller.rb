@@ -8,11 +8,13 @@ class SessionsController < ApplicationController
     get '/login' do
         redirect_if_logged_in
         # render form
+        
         erb :'sessions/new'
     end
 
     # login route POST
     post '/login' do
+
         redirect_if_logged_in
         # take data find User
         user = User.find_by(email: params["user"]["email"])
@@ -23,7 +25,8 @@ class SessionsController < ApplicationController
             redirect "/orders"
         # if user not valid, send back to /login
         else
-            redirect "/login"
+            #redirect "/login"
+            erb :'users/error_page'
         end
     end
 

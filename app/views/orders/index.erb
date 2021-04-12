@@ -1,18 +1,17 @@
-<h1>All Order</h1>
+<br><center><h3>All Order</h3></center><br>
+
+
 <ul>
    
     <% @orders.each do |m| %>
-        <li>
-            <a href="/orders/<%= m.id %>">
-                <%= m.address %>
-                <%= m.item %>
-                <%= m.item_price%>
-                <%= m.quantity %>
-                <%= m.total %>   
-            </a>
-        </li>
+        <ul>
+         <p><a href="/orders/<%= m.id %>">
+                
+               <p> <li><%= m.item %></li></p>
+                
+            </a></p>
+        </ul>
     <% end %>
    
     <a href="/orders/new" class="button">Add Items</a>
 </ul>
-
