@@ -3,11 +3,11 @@
         <h3>Order number <%=@order.id%></h3>
     </center>
 <br>
-<li><%=@order.address%>
-<li><%=@order.item%></li>
-<li><%=@order.item_price%></li>
-<li><%=@order.quantity%></li>
-<li><%=@order.total%></li>
+<li><b>Address:</b> <%=@order.address%>
+<li><b>Item:</b> <%=@order.item%></li>
+<li><b>Price:</b> <%=@order.item_price%></li>
+<li><b>Quantity:</b> <%=@order.quantity%></li>
+<li><b>Total:</b> <%=@order.total%></li>
 
 
 </form>
@@ -17,4 +17,5 @@
 <form action="/orders/<%= @order.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Order">
+<form>
    

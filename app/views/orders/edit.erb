@@ -1,11 +1,17 @@
 <center>
-<form action="/orders/<%= @order.id %>" method="POST">
-    <input type="hidden" name="_method" value="patch">
-    <input type="text" name="order[address]" value="<%= @order.address %>"><br>
-    <input type="text" name="order[item]" value="<%= @order.item %>"><br>
-    <textarea name="order[item_price]"><%= @order.item_price %></textarea><br>
-    <input type="text" name="order[quantity]" value="<%= @order.quantity %>"><br>
-    <input type="text" name="order[total]" value="<%= @order.total %>"><br>
-    <input type="submit" value="Update Order">
-</form>
+    <form action="/orders/<%= @order.id %>" method="POST">
+        <input type="hidden" name="_method" value="patch">
+
+        <input type="text" name="order[address]" value="<%= @order.address %>"><br>
+
+        <input type="text" name="order[item]" value="<%= @order.item %>"><br>
+
+        <input type="text" name="order[item_price]" value="<%= @order.item_price %>"><br>
+
+        <input type="text" name="order[quantity]" value="<%= @order.quantity %>"><br>
+
+        <input type="text" name="order[total]" value="<%= @order.total %>"><br>
+
+        <input type="submit" value="Update Order">
+        </form>
 </center>
