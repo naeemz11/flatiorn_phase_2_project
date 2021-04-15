@@ -11,13 +11,13 @@ class UsersController < ApplicationController
         
         redirect_if_logged_in
 
-        user = User.new(params[:user])
+        user = User.new(params["user"])
 
          if user.save 
             session[:user_id]= user.id 
             redirect "/orders"
         else 
-            redirect "/signup"
+            erb :"/users/error_page"
         end 
     end
 

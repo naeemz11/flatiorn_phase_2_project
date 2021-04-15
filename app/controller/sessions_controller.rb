@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         # if user not valid, send back to /login
         else
             #redirect "/login"
-            erb :'users/error_page'
+            erb :'sessions/error_page'
         end
     end
 
