@@ -91,7 +91,7 @@ body {
 
     <%= yield %>
     <% if logged_in? %>
-        <br><br>
+       <br><br>
         <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Logout">

@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
     #each order needs show who created it 
 
     @orders=Order.all
-    
+   
     erb :'orders/all_orders'
 
    end 
@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
     
         # movie = Movie.new(params["movie"])
         # movie.user_id = session["user_id"]
+    
         order = current_user.orders.build(params["order"])
     
         if order.save

@@ -1,6 +1,14 @@
+<center>
 <h1>All orders</h2>
+</center>
 
+
+<br><ul>
 <%@orders.each do |order|%>
-    <%=order.item%>
+   <li> <%=order.item%>: <%=order.user.email%>  </li>
     
     <%end%>
+
+<ul>
+
+    
