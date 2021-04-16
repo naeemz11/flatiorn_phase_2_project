@@ -5,10 +5,34 @@
 
 <br><ul>
 <%@orders.each do |order|%>
-   <li> <%=order.item%>: <%=order.user.email%>  </li>
-    
+  
+   <li>ID: (<%=order.user.id%>) <b><%=order.item%>:</b> <%=order.user.email%> 
+        
     <%end%>
 
-<ul>
+<br><ul>
 
-    
+
+
+<ul>
+<br><h5>Last User's Orders</h5>
+
+<%@order.each do |order|%>
+  
+    <li><b><%=order.item%></b>: <%=order.user.email%></li>
+    <%end%>
+</ul>
+
+
+<ul>
+<br><h5>Last User's New Order</h5>
+
+<li>Item: <%=@new_order.item%></li>
+</ul>
+
+
+<br><ul>
+<h5>Update A Users Email To The First Users</h5>
+
+<li>ID: (<%=@jack_id%>): <%=@update_email%></li>
+</ul>

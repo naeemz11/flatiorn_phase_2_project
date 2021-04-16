@@ -5,11 +5,34 @@ class OrdersController < ApplicationController
     #display all orders 
     #each order needs show who created it 
 
+    #last user's orders
     @orders=Order.all
-   
-    erb :'orders/all_orders'
+    @user = User.last
+    @order = @user.orders
+    #  def last
+    #  user = User.last
+    #  order =Order.last 
+    #  order.user_id = user.id
+    #  end 
+    
+    #last user's new order:
+    @new_order = @user.orders.build(address: "111 Fremont Cl", item: "Tesla", quantity: "1", item_price: "42069", total: "42069")
 
+    #edit an user's email and change it to the first user's
+    @jack= User.find_by_id(5)
+    @jack_id= @jack.id
+    
+    @update_email= @jack.email 
+    @update_email = "frank@gmail.com"
+    
+
+    erb :'orders/all_orders'
    end 
+   
+#    get '/orders/new/last_user' do
+#         @order= Order.last
+#         order = 
+#     end 
 
    
     
